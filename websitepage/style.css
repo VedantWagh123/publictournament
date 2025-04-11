@@ -1,0 +1,639 @@
+/* RESET & GLOBAL */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+
+
+
+/* Add this to your main CSS file */
+
+/* Wrap your full content inside a main container like this in HTML:
+   <div class="content-wrapper"> ...all website content... </div>
+*/
+
+.content-wrapper {
+    background-color: rgba(0, 0, 0, 0.6); /* 0.6 for semi-transparent black */
+    backdrop-filter: blur(4px); /* Optional: adds a soft blur behind content */
+    border-radius: 20px;         /* Optional: gives soft rounded corners */
+    padding: 20px;
+    z-index: 2;
+    position: relative;
+  }
+  
+  /* Make sure background images are behind everything */
+  body {
+    background-color: #000; /* fallback */
+    background-image: none; /* your background images go separately in HTML */
+    overflow-x: hidden;
+  }
+  
+  .background-images {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    pointer-events: none; /* so clicks go through */
+  }
+  
+
+
+/* Theory Section */
+.theory {
+  background: #141414;
+  padding: 2.5rem 2rem;
+  text-align: center;
+  line-height: 1.7;
+  border-top: 2px solid #00ffcc;
+  border-bottom: 2px solid #00ffcc;
+}
+
+.theory h2 {
+  font-size: 2rem;
+  color: #00ffcc;
+  margin-bottom: 1rem;
+}
+
+.theory ul {
+  margin-top: 1rem;
+  list-style: none;
+  padding: 0;
+}
+
+.theory li {
+  margin: 0.5rem 0;
+  font-size: 1.1rem;
+  color: #ccc;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  body {
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(120deg, #0f0f0f, #1a1a2e, #16213e, #0f0f0f);
+    background-size: 400% 400%;
+    animation: bgShift 20s infinite alternate;
+    color: #fff;
+    line-height: 1.6;
+  }
+  
+  /* GRADIENT BACKGROUND ANIMATION */
+  @keyframes bgShift {
+    0% { background-position: 0% 50%; }
+    100% { background-position: 100% 50%; }
+  }
+  
+  /* NAVBAR */
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background: rgba(0,0,0,0.8);
+    position: sticky;
+    top: 0;
+    z-index: 999;
+    backdrop-filter: blur(10px);
+  }
+  .nav-logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #00ffe7;
+  }
+  .nav-links a {
+    color: #fff;
+    margin-left: 20px;
+    text-decoration: none;
+    transition: 0.3s;
+  }
+  .nav-links a:hover {
+    color: #00ffe7;
+  }
+  
+  /* HEADER */
+  .header {
+    text-align: center;
+    padding: 5rem 2rem;
+    background: linear-gradient(to right, #1f1c2c, #928dab);
+    color: #fff;
+  }
+  .header h1 {
+    font-size: 2.8rem;
+    margin-bottom: 1rem;
+  }
+  .header p {
+    font-size: 1.3rem;
+  }
+  
+  /* COUNTDOWN SECTION */
+  .countdown-section {
+    text-align: center;
+    margin: 3rem 0;
+  }
+  .countdown-timer {
+    font-size: 1.6rem;
+    margin-top: 1rem;
+    color: #00ffe7;
+  }
+  
+  /* CARDS */
+  .cards {
+    display: flex;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    padding: 2rem;
+    justify-content: space-evenly;
+  }
+  .card {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 1rem;
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.2);
+    transition: transform 0.3s, box-shadow 0.3s;
+    text-align: center;
+  }
+  .card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 12px;
+    margin-bottom: 10px;
+  }
+  .card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 40px rgba(0, 255, 255, 0.6);
+  }
+  
+  /* ABOUT */
+  .about {
+    padding: 2rem;
+    text-align: center;
+    background: linear-gradient(to right, #360033, #0b8793);
+  }
+  
+  /* CONTACT FORM */
+  .contact {
+    background: rgba(0, 0, 0, 0.8);
+    padding: 2rem;
+    text-align: center;
+  }
+  .register-form {
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-width: 400px;
+    margin-inline: auto;
+  }
+  .register-form input,
+  .register-form button {
+    padding: 12px;
+    border: none;
+    border-radius: 10px;
+  }
+  .register-form button {
+    background: #00ffe7;
+    color: #000;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  .register-form button:hover {
+    background: #00bfa6;
+  }
+  
+  /* BACK TO TOP */
+  #topBtn {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background: #00ffcc;
+    color: black;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 50%;
+    display: none;
+    font-size: 20px;
+    cursor: pointer;
+  }
+  
+  /* MODAL */
+  .modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.8);
+  }
+  .modal-content {
+    background-color: #222;
+    color: white;
+    padding: 30px;
+    border-radius: 10px;
+    max-width: 400px;
+    margin: 10% auto;
+    text-align: center;
+    box-shadow: 0 0 25px #00ffcc;
+  }
+  .close {
+    float: right;
+    font-size: 24px;
+    cursor: pointer;
+    color: #aaa;
+  }
+  
+  /* FLOATING BACKGROUND IMAGES */
+  .floating-images {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: 1;
+  }
+  .float-img {
+    position: absolute;
+    width: 150px;
+    opacity: 0.25;
+    animation: floatY 12s infinite ease-in-out alternate;
+  }
+  .img1 { top: 10%; left: 20%; animation-delay: 0s; }
+  .img2 { top: 40%; left: 60%; animation-delay: 2s; }
+  .img3 { top: 70%; left: 35%; animation-delay: 4s; }
+  
+  @keyframes floatY {
+    0% { transform: translateY(0px) rotate(0deg); }
+    50% { transform: translateY(-30px) rotate(10deg); }
+    100% { transform: translateY(0px) rotate(-10deg); }
+  }
+  
+  /* 🔥 ADVANCED GRADIENT CONTACT SECTION */
+  .gradient-contact {
+    background: linear-gradient(135deg, #f953c6, #b91d73, #2b5876, #4e4376);
+    background-size: 300% 300%;
+    animation: gradientWave 10s ease infinite;
+    color: white;
+    text-align: center;
+    padding: 4rem 1rem;
+    margin-top: 3rem;
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+    box-shadow: 0 -8px 40px rgba(0, 0, 0, 0.3);
+  }
+  
+  @keyframes gradientWave {
+    0% { background-position: 0% 50%; }
+    100% { background-position: 100% 50%; }
+  }
+  
+  .gradient-contact h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    text-shadow: 0 0 10px rgba(255,255,255,0.3);
+  }
+  .gradient-contact p {
+    font-size: 1.2rem;
+    margin: 0.5rem 0;
+  }
+  .insta-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 1.5rem;
+    font-weight: bold;
+    text-decoration: none;
+    color: white;
+    font-size: 1.3rem;
+    background: rgba(255,255,255,0.1);
+    padding: 12px 20px;
+    border-radius: 12px;
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+  }
+  .insta-link img {
+    width: 28px;
+    height: 28px;
+    filter: drop-shadow(0 0 5px white);
+  }
+  .insta-link:hover {
+    transform: scale(1.08);
+    background: rgba(255,255,255,0.2);
+    box-shadow: 0 0 25px rgba(255,255,255,0.3);
+  }
+  
+
+
+
+
+
+
+
+
+  .non {
+    text-decoration: none;  /* underline hatata hai */
+    color: inherit;         /* original text color maintain karta hai */
+    cursor: pointer;        /* pointer cursor for click */
+  }
+  
+  .non:hover {
+    color: #00fff7;         /* hover effect ke liye optional color */
+    transition: 0.3s ease;
+  }
+  
+
+
+
+
+/* Register Button Style */
+.reg-btn {
+  padding: 10px 20px;
+  background: linear-gradient(135deg, #ff00cc, #3333ff);
+  color: white;
+  border: none;
+  font-weight: bold;
+  border-radius: 10px;
+  box-shadow: 0 0 15px #ff00cc;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+.reg-btn:hover {
+  transform: scale(1.05);
+}
+
+/* Modal Fullscreen BG */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0; top: 0;
+  width: 100%;
+  height: 100%;
+  backdrop-filter: blur(8px);
+  background: rgba(0, 0, 0, 0.6);
+}
+
+/* Modal Box */
+.modal-content {
+  background: #1a1a2e;
+  margin: 10% auto;
+  padding: 30px;
+  border-radius: 15px;
+  width: 90%;
+  max-width: 500px;
+  color: #fff;
+  box-shadow: 0 0 30px #0ff;
+  animation: popUp 0.4s ease;
+}
+
+/* Animation */
+@keyframes popUp {
+  from { transform: scale(0.7); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+
+
+/* Form Inputs */
+.modal-content input {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  border: none;
+  border-radius: 8px;
+  background: #333;
+  color: #fff;
+}
+.submit-btn {
+  background: linear-gradient(135deg, #00ffcc, #0099ff);
+  padding: 12px;
+  width: 100%;
+  border: none;
+  color: white;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+  box-shadow: 0 0 10px #00ffe7;
+}
+.submit-btn:hover {
+  transform: scale(1.05);
+}
+
+
+
+
+@media (max-width: 600px) {
+  .nav-links {
+    flex-direction: column;
+    align-items: center;
+  }
+  .card img {
+    height: 150px;
+  }
+}
+
+body {
+  cursor: url('https://cur.cursors-4u.net/games/gam-1/gam49.cur'), auto;
+}
+
+
+
+
+
+
+
+.submit-btn {
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ /* tournament-cards.css */
+ 
+
+.upcoming-tournaments {
+  padding: 60px 30px;
+  background: linear-gradient(to bottom, #0d1021, #1a1d3a);
+  color: white;
+  font-family: 'Orbitron', sans-serif;
+}
+
+.tournament-title {
+  text-align: center;
+  font-size: 2.5rem;
+  color: #fff;
+  text-shadow: 0 0 20px #f90;
+  margin-bottom: 40px;
+}
+
+.tournament-slider {
+  display: flex;
+  overflow-x: auto;
+  gap: 20px;
+  padding-bottom: 20px;
+  scroll-behavior: smooth;
+}
+
+.tournament-card {
+  flex: 0 0 auto;
+  background: linear-gradient(145deg, #0a0a1a, #1e1f3a);
+  border-radius: 20px;
+  box-shadow: 0 0 15px rgba(255, 215, 0, 0.4);
+  overflow: hidden;
+  width: 300px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  font-family: 'Rajdhani', sans-serif;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.tournament-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 25px rgba(255, 215, 0, 0.8);
+}
+
+.tournament-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.tournament-card h3 {
+  font-size: 1.2rem;
+  text-align: center;
+  margin: 15px 0 10px;
+  color: #ffcc00;
+}
+
+.tournament-card p {
+  font-size: 0.95rem;
+  color: #ccc;
+  padding: 0 15px 15px;
+  text-align: center;
+  line-height: 1.5;
+}
+
+/* Scrollbar Styling */
+.tournament-slider::-webkit-scrollbar {
+  height: 8px;
+}
+
+.tournament-slider::-webkit-scrollbar-thumb {
+  background: #ffcc00;
+  border-radius: 4px;
+}
+
+.tournament-slider::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+@media (max-width: 768px) {
+  .tournament-slider {
+    gap: 15px;
+  }
+  .tournament-card {
+    width: 260px;
+  }
+}
+
+@media (max-width: 480px) {
+  .tournament-title {
+    font-size: 2rem;
+  }
+  .tournament-card {
+    width: 220px;
+  }
+}

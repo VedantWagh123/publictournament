@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Insane Tournament Form</title>
+  <link rel="stylesheet" href="freefire.css">
+  <!-- SweetAlert2 CSS & JS -->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+</head>
+<body>
+  <section class="registration-section">
+    
+    <!-- 🎯 Background Floating Images -->
+    <img src="https://i.ibb.co/1YPqVJSh/Free-Fire-2017.jpg" class="floating-img img1" />
+    <img src="https://i.ibb.co/CptMNJCS/download-5.jpg " class="floating-img img2" />
+    <img  src="https://i.ibb.co/hJVXfJ0x/Ga-Mi-Ng-SET-up-1.jpg" class="floating-img img3" />
+    <img src="https://i.ibb.co/7JbR8NsH/Love-free-fire.jpg" class="floating-img img4" />
+    <img src=" https://i.ibb.co/1YPqVJSh/Free-Fire-2017.jpg" class="floating-img img5" />
+    <img src=" https://i.ibb.co/hJVXfJ0x/Ga-Mi-Ng-SET-up-1.jpg" class="floating-img img6" />
+
+    <!-- 🔥 Registration Form -->
+    <div class="form-wrapper">
+      <h2 class="form-heading">Register Your Squad</h2>
+      <form class="epic-form" action=" ../websitepage/data.php" method="post" onsubmit="return confirmSubmit(this)">
+        <input type="hidden" name ="game" value ="freefire"/>
+        <input type="text" placeholder="Team Name" name="name" required />
+        <input type="text" placeholder="Department Name" name="department" required />
+        <input type="tel" placeholder="Contact Number"name="contact" required />
+        <input type="text" placeholder="IGL Name" name="igl" required />
+        <button type="submit">🔥 Submit Registration</button>
+      </form>
+    </div>
+  </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script>
+    function confirmSubmit(form) {
+      const gameName = form.querySelector('input[name="game"]').value;
+    
+      // SweetAlert2 Modal
+      Swal.fire({
+        title: `Are you sure?`,
+        text: `Do you want to register for ${gameName.toUpperCase()}?`,
+        icon: 'question',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Yes, Register!',
+        cancelButtonText: 'No, Cancel'
+      }).then((result) => {
+        if (result.isConfirmed) {
+          form.submit(); // manually submit the form
+        } else {
+          // Do nothing if cancelled
+        }
+      });
+    
+      return false; // prevent default submit until confirmed
+    }
+    </script>
+    
+</body>
+</html>
