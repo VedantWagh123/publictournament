@@ -558,6 +558,7 @@ body {
   text-shadow: 0 0 20px #f90;
   margin-bottom: 40px;
 }
+ 
 
 .tournament-slider {
   display: flex;
@@ -566,6 +567,56 @@ body {
   padding-bottom: 20px;
   scroll-behavior: smooth;
 }
+
+#h2 {
+  font-size: 1.6rem;
+  color: #ffee58;
+  text-align: center;
+  margin-top: 15px;
+  margin-bottom: 30px; /* ↓ Thoda upar ho jayega cards se */
+  font-family: 'Rajdhani', sans-serif;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+
+  text-shadow:
+    0 0 3px #ffeb3b,
+    0 0 6px #fdd835;
+
+  transition: all 0.3s ease-in-out;
+}
+
+#h2:hover {
+  text-shadow:
+    0 0 6px #fff176,
+    0 0 12px #fbc02d;
+  transform: scale(1.03);
+}
+.arrow-down {
+  text-align: center;
+  font-size: 1.5rem;
+  color: #ffee58;
+  margin-top: -20px;
+  animation: arrowGlow 1.5s infinite alternate;
+  text-shadow:
+    0 0 5px #ffeb3b,
+    0 0 10px #fdd835;
+}
+
+@keyframes arrowGlow {
+  0% {
+    transform: translateY(0);
+    text-shadow:
+      0 0 5px #ffeb3b,
+      0 0 10px #fdd835;
+  }
+  100% {
+    transform: translateY(5px);
+    text-shadow:
+      0 0 10px #fff176,
+      0 0 20px #fbc02d;
+  }
+}
+
 
 .tournament-card {
   flex: 0 0 auto;

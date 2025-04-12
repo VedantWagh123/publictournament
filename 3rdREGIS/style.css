@@ -1,4 +1,3 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap');
 
 * {
@@ -30,7 +29,7 @@ body, html {
 .floating-img {
   position: absolute;
   width: 100px;
-  opacity: 2;
+  opacity: 0.2;
   animation: float 6s ease-in-out infinite;
   z-index: 0;
 }
@@ -51,7 +50,7 @@ body, html {
   }
 }
 
-/* Form Section */
+/* Form Design */
 .form-wrapper {
   z-index: 10;
   position: relative;
@@ -72,7 +71,7 @@ body, html {
   text-align: center;
   margin-bottom: 2rem;
   background: linear-gradient(90deg, #00fff0, #ff00ff);
-   
+  -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   animation: glow 2s ease-in-out infinite alternate;
 }

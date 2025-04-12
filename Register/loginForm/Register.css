@@ -1,0 +1,95 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI", sans-serif;
+  }
+  
+  body {
+    background: linear-gradient(135deg, #0f0f0f, #1f1b3a);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: #fff;
+  }
+  
+  .register-container {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.2);
+    padding: 40px;
+    border-radius: 16px;
+    backdrop-filter: blur(15px);
+    width: 100%;
+    max-width: 400px;
+    animation: slideFade 1s ease forwards;
+  }
+  
+  @keyframes slideFade {
+    0% {
+      transform: translateY(-40px);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  
+  .title {
+    text-align: center;
+    font-size: 28px;
+    margin-bottom: 25px;
+    color: #0ff;
+    text-shadow: 0 0 10px #0ff;
+  }
+  
+  .register-form .input-box {
+    margin-bottom: 20px;
+  }
+  
+  .input-box label {
+    display: block;
+    font-size: 14px;
+    margin-bottom: 5px;
+    color: #ccc;
+  }
+  
+  .input-box input {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #fff;
+    font-size: 16px;
+    outline: none;
+    transition: 0.3s ease;
+    box-shadow: 0 0 5px transparent;
+  }
+  
+  .input-box input:focus {
+    box-shadow: 0 0 10px #00ffff;
+    background-color: rgba(255, 255, 255, 0.15);
+  }
+  
+  .register-btn {
+    width: 100%;
+    padding: 12px;
+    background: linear-gradient(to right, #00ffff, #00ccff);
+    border: none;
+    border-radius: 10px;
+    color: #000;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s ease;
+    font-weight: bold;
+    box-shadow: 0 0 10px #00ffff;
+  }
+  
+  .register-btn:hover {
+    background: linear-gradient(to right, #00ccff, #00ffff);
+    box-shadow: 0 0 20px #00ffff;
+  }
+  
