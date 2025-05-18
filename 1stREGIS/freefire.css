@@ -10,10 +10,11 @@ body, html {
   height: 100%;
   width: 100%;
   font-family: 'Orbitron', sans-serif;
-  background: #0d0d1a;
+  background: #0f0f0f;
   overflow: hidden;
 }
 
+/* 🎮 Background Section */
 .registration-section {
   position: relative;
   height: 100vh;
@@ -21,24 +22,17 @@ body, html {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: radial-gradient(circle at center, #0d0d1a, #000000);
+  background: radial-gradient(circle at center, #0f0f0f, #000);
   z-index: 1;
-  overflow: hidden;
 }
 
-/* Floating Images */
+/* Floating Images with Advanced Animation */
 .floating-img {
   position: absolute;
-  width: 100px;
+  width: 120px;
   opacity: 0.5;
-  animation: float 6s ease-in-out infinite;
+  animation: float 8s ease-in-out infinite;
   z-index: 0;
-  filter: drop-shadow(0 0 10px #00eaff) brightness(1.2);
-  transition: transform 0.5s ease, filter 0.5s ease;
-}
-.floating-img:hover {
-  transform: scale(1.1) rotate(5deg);
-  filter: drop-shadow(0 0 25px #00ffe7) brightness(1.5);
 }
 
 .img1 { top: 10%; left: 5%; animation-delay: 0s; }
@@ -50,32 +44,24 @@ body, html {
 
 @keyframes float {
   0%, 100% { transform: translateY(0px) rotate(0deg); }
-  50% { transform: translateY(-20px) rotate(10deg); }
+  25% { transform: translateY(-30px) rotate(10deg); }
+  50% { transform: translateY(30px) rotate(-10deg); }
+  75% { transform: translateY(-20px) rotate(5deg); }
 }
 
-/* Form Styling */
+/* 🌟 Form Wrapper */
 .form-wrapper {
   z-index: 10;
   position: relative;
   width: 100%;
   max-width: 500px;
-  background: rgba(20, 20, 40, 0.75);
+  background: rgba(0, 0, 0, 0.75);
   padding: 3rem 2rem;
   border-radius: 20px;
-  backdrop-filter: blur(12px);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 0 40px rgba(0, 255, 255, 0.2);
   border: 2px solid transparent;
-  box-shadow: 0 0 40px rgba(0, 180, 255, 0.25),
-              0 0 60px rgba(140, 0, 255, 0.15),
-              inset 0 0 20px rgba(180, 0, 255, 0.15);
   animation: borderGlow 5s linear infinite;
-  transition: 0.5s ease-in-out;
-}
-
-.form-wrapper:hover {
-  box-shadow: 0 0 50px #00ffe2aa,
-              0 0 70px #aa00ffaa,
-              inset 0 0 30px #00ffe244;
-  transform: scale(1.01);
 }
 
 .form-heading {
@@ -83,7 +69,7 @@ body, html {
   color: white;
   text-align: center;
   margin-bottom: 2rem;
-  background: linear-gradient(90deg, #00ffff, #8a2be2);
+  background: linear-gradient(90deg, #00fff0, #ff00ff);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   animation: glow 2s ease-in-out infinite alternate;
@@ -101,98 +87,52 @@ body, html {
   outline: none;
   font-size: 1rem;
   border-radius: 10px;
-  background: #1a1a2e;
+  background: #111;
   color: #fff;
-  box-shadow: inset 0 0 10px #00d4ff44;
-  transition: 0.4s ease;
-}
-
-.epic-form input:hover {
-  background: #121226;
-  box-shadow: 0 0 15px #00d4ff99, inset 0 0 15px #00d4ff99;
-  transform: scale(1.02);
+  box-shadow: inset 0 0 10px #00f2ff44;
+  transition: 0.3s ease;
 }
 
 .epic-form input:focus {
-  background: #0d0d1a;
-  box-shadow: 0 0 20px #00d4ffcc, inset 0 0 20px #00d4ffcc;
-  transform: scale(1.03);
+  background: #000;
+  box-shadow: 0 0 15px #00e1ff, inset 0 0 15px #00e1ff;
+  transform: scale(1.02);
 }
 
 .epic-form button {
   padding: 1rem;
-  background: linear-gradient(45deg, #00ffe2, #aa00ff);
+  background: linear-gradient(45deg, #00ffcc, #ff00cc);
   color: #000;
   font-weight: bold;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   border: none;
   border-radius: 10px;
   cursor: pointer;
-  box-shadow: 0 0 25px #00ffe288;
+  box-shadow: 0 0 20px #00ffcc80;
   transition: all 0.4s ease;
-  position: relative;
-  overflow: hidden;
-}
-
-.epic-form button::before {
-  content: '';
-  position: absolute;
-  top: -50%;
-  left: -50%;
-  width: 200%;
-  height: 200%;
-  background: radial-gradient(circle, rgba(255,255,255,0.2), transparent);
-  transform: rotate(45deg);
-  animation: pulseBtn 2s infinite;
 }
 
 .epic-form button:hover {
-  background: linear-gradient(45deg, #aa00ff, #00ffe2);
-  box-shadow: 0 0 30px #aa00ffaa, 0 0 30px #00ffe2aa;
+  background: linear-gradient(45deg, #ff00cc, #00ffcc);
+  box-shadow: 0 0 25px #ff00ccaa, 0 0 25px #00ffccaa;
   color: #fff;
   transform: scale(1.05);
 }
 
-@keyframes pulseBtn {
-  0% {
-    transform: translate(-50%, -50%) scale(1);
-    opacity: 0.6;
-  }
-  100% {
-    transform: translate(-50%, -50%) scale(1.5);
-    opacity: 0;
-  }
-}
-
+/* 🎯 Glow Effects and Animations */
 @keyframes glow {
-  0% {
-    text-shadow: 0 0 5px #00fff0, 0 0 10px #8a2be2;
-  }
-  100% {
-    text-shadow: 0 0 20px #00fff0, 0 0 40px #8a2be2;
-  }
+  0% { text-shadow: 0 0 5px #00fff0, 0 0 10px #ff00ff; }
+  100% { text-shadow: 0 0 20px #00fff0, 0 0 40px #ff00ff; }
 }
 
 @keyframes borderGlow {
-  0% {
-    border-color: #00ffe2;
-    box-shadow: 0 0 10px #00ffe255;
-  }
-  50% {
-    border-color: #aa00ff;
-    box-shadow: 0 0 20px #aa00ff55;
-  }
-  100% {
-    border-color: #00ffe2;
-    box-shadow: 0 0 10px #00ffe255;
-  }
+  0% { border-color: #00ffcc; box-shadow: 0 0 10px #00ffcc55; }
+  50% { border-color: #ff00ff; box-shadow: 0 0 20px #ff00ff55; }
+  100% { border-color: #00ffcc; box-shadow: 0 0 10px #00ffcc55; }
 }
 
+/* 🖥️ Responsive Design */
 @media (max-width: 600px) {
-  .form-wrapper {
-    padding: 2rem 1rem;
-  }
-  .form-heading {
-    font-size: 2rem;
-  }
+  .form-wrapper { padding: 2rem 1rem; }
+  .form-heading { font-size: 2rem; }
 }

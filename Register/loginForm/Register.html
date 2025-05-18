@@ -3,27 +3,74 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <!-- Add in <head> -->
+ 
+
   <title>Register</title>
-  <link rel="stylesheet" href="register.css" />
+  <link rel="stylesheet" href="Register.css"/>
 </head>
 <body>
-    <div class="register-container">
-        <h2 class="title">Create Your Account</h2>
-        <form class="register-form" action="Register.php" method="POST">
-          
-          <div class="input-box">
-            <label for="email">Email</label>
-            <input type="email" id="email" name="email" placeholder="Enter your email" required />
-          </div>
+
+ 
+
+  <!-- Background Animation -->
+  <div class="background-animation"></div>
+
+  <!-- Border Loader -->
+  <div class="loader-border">
+    <div class="loader-progress"></div>
+    <span class="loader-text">Loading... <span id="percent">0%</span></span>
+  </div>
+
+  <!-- Actual Register Form -->
+  <div class="register-container" id="registerForm">
+    <h2 class="title">Create Your Account</h2>
+    <form class="register-form" action="Register.php" method="POST">
       
-          <div class="input-box">
-            <label for="password">Password</label>
-            <input type="password" id="password" name="password" placeholder="Create a password" required />
-          </div>
-      
-          <button type="submit" class="register-btn">Register</button>
-        </form>
+      <div class="input-box">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" placeholder="Enter your email" required />
       </div>
-      
+  
+      <div class="input-box">
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" placeholder="Create a password" required />
+      </div>
+  
+      <button type="submit" class="register-btn">Register</button>
+    </form>
+  </div>
+
+
+
+
+
+
+
+
+
+
+  <script >
+    const loader = document.querySelector(".loader-progress");
+const percentText = document.getElementById("percent");
+const registerForm = document.getElementById("registerForm");
+
+let percent = 0;
+let interval = setInterval(() => {
+  percent++;
+  loader.style.width = percent + "%";
+  percentText.innerText = percent + "%";
+
+  if (percent >= 100) {
+    clearInterval(interval);
+    document.querySelector(".loader-border").style.display = "none";
+    registerForm.style.display = "block";
+  }
+}, 30);
+
+ 
+ 
+
+  </script>
 </body>
 </html>

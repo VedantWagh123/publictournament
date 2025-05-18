@@ -36,5 +36,40 @@
     </form>
   </div>
 
+
+
+
+
+
+
+
+
+  <!-- Popup Message -->
+<div id="loginPopup"></div>
+
+<script>
+  // Show popup with custom message
+  function showPopup(message, type = "success") {
+    const popup = document.getElementById("loginPopup");
+    popup.innerText = message;
+    popup.className = type === "success" ? "" : "error";
+    popup.style.display = "block";
+
+    setTimeout(() => {
+      popup.style.display = "none";
+      if (type === "success") {
+        window.location.href = "../index.html"; // ✅ Redirect after success
+      }
+    }, 2000);
+  }
+
+
+
+
+
+
+  
+</script>
+
 </body>
 </html>

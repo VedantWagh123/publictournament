@@ -5,76 +5,40 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Insane Tournament Form</title>
   <link rel="stylesheet" href="style.css">
-  <!-- SweetAlert2 CSS & JS -->
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 <body>
+
+  <!-- 🌫️ Smoke Background -->
+  <div class="smoke-bg"></div>
+
   <section class="registration-section">
     
-    <!-- 🎯 Background Floating Images -->
+    <!-- 🎯 Floating Images -->
     <img src="https://i.ibb.co/jv9wQ8bt/Krueger-Firestarter.jpg" class="floating-img img1" />
     <img src="https://i.ibb.co/JYKWTFK/da655668-cf35-47a8-855b-91cc69bdfd14.jpg" class="floating-img img2" />
-    <img  src="https://i.ibb.co/JYKWTFK/da655668-cf35-47a8-855b-91cc69bdfd14.jpg" class="floating-img img3" />
-    <img src= "https://i.ibb.co/WpPncwK6/Nubia-Red-Magic-5-G-exclusive-wallpapers-Call-of.jpg" class="floating-img img4" />
-    <img src=" https://i.ibb.co/JYKWTFK/da655668-cf35-47a8-855b-91cc69bdfd14.jpg " class="floating-img img5" />
-    <img src=" " class="floating-img img6" />
+    <img src="https://i.ibb.co/JYKWTFK/da655668-cf35-47a8-855b-91cc69bdfd14.jpg" class="floating-img img3" />
+    <img src="https://i.ibb.co/WpPncwK6/Nubia-Red-Magic-5-G-exclusive-wallpapers-Call-of.jpg" class="floating-img img4" />
+    <img src="https://i.ibb.co/JYKWTFK/da655668-cf35-47a8-855b-91cc69bdfd14.jpg" class="floating-img img5" />
+    <img src="" class="floating-img img6" />
 
-    <!-- 🔥 Registration Form -->
+    <!-- 🔥 Form -->
     <div class="form-wrapper">
       <h2 class="form-heading">Register Your Squad</h2>
-      <form class="epic-form"action=" ../websitepage/data.php" method="post" onsubmit="return confirmSubmit(this)">
-        <input type="hidden" name ="game" value ="callofdeuty"/>
-        <input type="text" placeholder="Team Name"name="name" required />
-        <input type="text" placeholder="Department Name"name="department" required />
+      <form class="epic-form" action="../websitepage/data.php" method="post" onsubmit="return confirmSubmit(this)">
+        <input type="hidden" name="game" value="callofdeuty" />
+        <input type="text" placeholder="Team Name" name="name" required />
+        <input type="text" placeholder="Department Name" name="department" required />
         <input type="tel" placeholder="Contact Number" name="contact" required />
-        <input type="text" placeholder="IGL Name"name="igl" required />
+        <input type="text" placeholder="IGL Name" name="igl" required />
         <button type="submit">🔥 Submit Registration</button>
       </form>
     </div>
   </section>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
   <script>
     function confirmSubmit(form) {
       const gameName = form.querySelector('input[name="game"]').value;
-    
-      // SweetAlert2 Modal
       Swal.fire({
         title: `Are you sure?`,
         text: `Do you want to register for ${gameName.toUpperCase()}?`,
@@ -86,15 +50,12 @@
         cancelButtonText: 'No, Cancel'
       }).then((result) => {
         if (result.isConfirmed) {
-          form.submit(); // manually submit the form
-        } else {
-          // Do nothing if cancelled
+          form.submit();
         }
       });
-    
-      return false; // prevent default submit until confirmed
+      return false;
     }
-    </script>
-    
+  </script>
+
 </body>
 </html>

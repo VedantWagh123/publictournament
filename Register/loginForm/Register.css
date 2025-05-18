@@ -1,95 +1,143 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: "Segoe UI", sans-serif;
-  }
-  
-  body {
-    background: linear-gradient(135deg, #0f0f0f, #1f1b3a);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    color: #fff;
-  }
-  
-  .register-container {
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    box-shadow: 0 0 20px rgba(0, 255, 255, 0.2);
-    padding: 40px;
-    border-radius: 16px;
-    backdrop-filter: blur(15px);
-    width: 100%;
-    max-width: 400px;
-    animation: slideFade 1s ease forwards;
-  }
-  
-  @keyframes slideFade {
-    0% {
-      transform: translateY(-40px);
-      opacity: 0;
-    }
-    100% {
-      transform: translateY(0);
-      opacity: 1;
-    }
-  }
-  
-  .title {
-    text-align: center;
-    font-size: 28px;
-    margin-bottom: 25px;
-    color: #0ff;
-    text-shadow: 0 0 10px #0ff;
-  }
-  
-  .register-form .input-box {
-    margin-bottom: 20px;
-  }
-  
-  .input-box label {
-    display: block;
-    font-size: 14px;
-    margin-bottom: 5px;
-    color: #ccc;
-  }
-  
-  .input-box input {
-    width: 100%;
-    padding: 12px;
-    border: none;
-    border-radius: 10px;
-    background-color: rgba(255, 255, 255, 0.1);
-    color: #fff;
-    font-size: 16px;
-    outline: none;
-    transition: 0.3s ease;
-    box-shadow: 0 0 5px transparent;
-  }
-  
-  .input-box input:focus {
-    box-shadow: 0 0 10px #00ffff;
-    background-color: rgba(255, 255, 255, 0.15);
-  }
-  
-  .register-btn {
-    width: 100%;
-    padding: 12px;
-    background: linear-gradient(to right, #00ffff, #00ccff);
-    border: none;
-    border-radius: 10px;
-    color: #000;
-    font-size: 16px;
-    cursor: pointer;
-    transition: 0.3s ease;
-    font-weight: bold;
-    box-shadow: 0 0 10px #00ffff;
-  }
-  
-  .register-btn:hover {
-    background: linear-gradient(to right, #00ccff, #00ffff);
-    box-shadow: 0 0 20px #00ffff;
-  }
-  
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(120deg, #0f0c29, #302b63, #24243e);
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Background Effect */
+.background-animation {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(#ffffff22 1px, transparent 1px);
+  background-size: 40px 40px;
+  z-index: 0;
+  animation: bgMove 40s linear infinite;
+  opacity: 0.2;
+}
+@keyframes bgMove {
+  0% { background-position: 0 0; }
+  100% { background-position: 1000px 1000px; }
+}
+
+/* Border Loader Container */
+.loader-border {
+  width: 330px;
+  height: 330px;
+  border: 6px solid transparent;
+  position: relative;
+  border-radius: 20px;
+  background-image: linear-gradient(#000, #000),
+    linear-gradient(90deg, #00c6ff, #0072ff, #ff00c8);
+  background-origin: border-box;
+  background-clip: content-box, border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+  box-shadow: 0 0 30px rgba(0, 200, 255, 0.5);
+  flex-direction: column;
+}
+
+.loader-progress {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 0%;
+  border-radius: 20px;
+  background: linear-gradient(to right, #00f2fe, #4facfe, #00f2fe);
+  z-index: -1;
+  transition: width 0.1s ease-in-out;
+}
+
+.loader-text {
+  color: white;
+  font-size: 1.1em;
+  margin-top: 20px;
+}
+
+/* Register Form */
+.register-container {
+  display: none;
+  z-index: 3;
+  background: rgba(255, 255, 255, 0.08);
+  padding: 40px;
+  border-radius: 20px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 0 40px rgba(0, 200, 255, 0.6);
+  animation: fadeIn 1s ease-in-out forwards;
+  max-width: 400px;
+  width: 100%;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.9); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+.register-container .title {
+  color: white;
+  margin-bottom: 25px;
+  text-align: center;
+}
+
+.register-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.input-box {
+  margin-bottom: 20px;
+}
+
+.input-box label {
+  color: #fff;
+  margin-bottom: 6px;
+  display: block;
+  font-weight: 500;
+}
+
+.input-box input {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 10px;
+  outline: none;
+  font-size: 1em;
+  background-color: #f9f9f9;
+  transition: 0.3s ease;
+}
+
+.input-box input:focus {
+  box-shadow: 0 0 15px rgba(0, 200, 255, 0.7);
+}
+
+.register-btn {
+  padding: 12px;
+  background: linear-gradient(90deg, #00f2fe, #4facfe);
+  border: none;
+  border-radius: 10px;
+  font-weight: bold;
+  cursor: pointer;
+  color: #fff;
+  transition: all 0.3s ease-in-out;
+}
+
+.register-btn:hover {
+  box-shadow: 0 0 25px rgba(0, 200, 255, 0.9);
+  transform: translateY(-2px);
+}
+
+
+ 

@@ -41,12 +41,13 @@ $stmt->bind_param("ss", $email, $pass);
 
 if ($stmt->execute()) {
     $mail = new PHPMailer(true);
+    
     try {
         $mail->isSMTP();
         $mail->Host       = 'smtp.gmail.com';
         $mail->SMTPAuth   = true;
         $mail->Username   = 'gullytournament222@gmail.com';  // ✅ Gmail sender
-        $mail->Password   = 'egdn dodc xrwd nfcq';           // ✅ App password
+        $mail->Password   = 'ekdz iyjg bnuf xzab';           // ✅ App password
         $mail->SMTPSecure = 'tls';
         $mail->Port       = 587;
 

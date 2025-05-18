@@ -688,3 +688,184 @@ body {
     width: 220px;
   }
 }
+ 
+
+ 
+
+
+/* बेसिक स्टाइलिंग */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.7);
+  animation: fadeIn 0.3s;
+}
+
+.modal-content {
+  background: #1e1e2f;
+  margin: 15% auto;
+  padding: 25px;
+  border-radius: 10px;
+  width: 80%;
+  max-width: 500px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+  position: relative;
+  animation: slideDown 0.4s ease-out;
+}
+
+/* एनिमेशन */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideDown {
+  from { transform: translateY(-50px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+ 
+
+
+
+
+
+
+.card-container {
+  display: flex;
+  overflow-x: auto;
+  padding: 20px;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+
+.card-container::-webkit-scrollbar {
+  display: none;
+}
+
+.card {
+  flex: 0 0 auto;
+  scroll-snap-align: start;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  padding: 25px;
+  margin-right: 20px;
+  box-shadow: 0 0 15px rgba(0, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  border: 2px solid transparent;
+  animation: glowBorder 3s ease-in-out infinite alternate;
+}
+
+.card:hover {
+  transform: scale(1.03) rotateX(5deg) rotateY(5deg);
+  box-shadow: 0 0 30px rgba(0, 255, 255, 0.4);
+}
+
+/* Card Image */
+.card img {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  margin-bottom: 15px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.card:hover img {
+  transform: scale(1.05);
+}
+
+/* Card Title */
+.card h3 {
+  font-size: 20px;
+  margin-bottom: 10px;
+  color: #fff;
+}
+
+/* Card Description */
+.card p {
+  font-size: 16px;
+  color: #ccc;
+}
+
+/* Card Button */
+.card button {
+  padding: 10px 20px;
+  background: linear-gradient(135deg, #00f2fe, #4facfe);
+  color: #fff;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.card button::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(135deg, #00f2fe, #4facfe);
+  animation: rotateGlow 4s linear infinite;
+  z-index: -1;
+  filter: blur(30px);
+}
+
+.card button:hover {
+  background: linear-gradient(135deg, #4facfe, #00f2fe);
+  transform: scale(1.05);
+}
+
+/* Glowing Border Animation */
+@keyframes glowBorder {
+  0% {
+      border-color: rgba(0, 255, 255, 0.2);
+  }
+  100% {
+      border-color: rgba(0, 255, 255, 0.6);
+  }
+}
+
+/* Button Glow Rotation */
+@keyframes rotateGlow {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Custom Scrollbar for entire site */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(#00f2fe, #4facfe);
+  border-radius: 20px;
+}
+
+/* Neon Glowing Background Line */
+.neon-line {
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #00f2fe, transparent);
+  animation: moveLine 4s linear infinite;
+  opacity: 0.3;
+}
+
+@keyframes moveLine {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}

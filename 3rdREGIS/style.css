@@ -25,13 +25,59 @@ body, html {
   z-index: 1;
 }
 
-/* Floating Image Animation */
+/* 🌫️ Smoke Background */
+.smoke-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100%;
+  background: radial-gradient(circle, #00fff055 0%, transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.smoke-bg::before,
+.smoke-bg::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 200%;
+  height: 200%;
+  background: url('https://i.ibb.co/Wg1LkFx/smoke-effect.png') repeat;
+  background-size: cover;
+  opacity: 0.05;
+  animation: moveSmoke 60s linear infinite;
+  mix-blend-mode: screen;
+}
+
+.smoke-bg::after {
+  animation-duration: 90s;
+  opacity: 0.07;
+  transform: rotate(180deg);
+}
+
+@keyframes moveSmoke {
+  0% {
+    transform: translate(0, 0) scale(1);
+  }
+  50% {
+    transform: translate(-10%, -10%) scale(1.1);
+  }
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+}
+
+/* 🖼️ Floating Image Animation */
 .floating-img {
   position: absolute;
   width: 100px;
   opacity: 0.2;
   animation: float 6s ease-in-out infinite;
-  z-index: 0;
+  z-index: 1;
 }
 
 .img1 { top: 10%; left: 5%; animation-delay: 0s; }
@@ -50,7 +96,7 @@ body, html {
   }
 }
 
-/* Form Design */
+/* 🧾 Form Styles */
 .form-wrapper {
   z-index: 10;
   position: relative;
@@ -144,6 +190,7 @@ body, html {
   }
 }
 
+/* 📱 Responsive */
 @media (max-width: 600px) {
   .form-wrapper {
     padding: 2rem 1rem;
